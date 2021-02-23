@@ -1,0 +1,26 @@
+<div class="container">
+    <form class="form-content">
+        <div fxLayout="column" fxLayoutAlign="start">
+            <div class="img1">
+                <img mat-card-image src="../../../assets/google.jpg" width="80" alt="Google Image" class="logo">
+            </div>
+
+            <div>
+                <h1 style="font-size: 24px;">Find your email</h1>
+            </div>
+            <div>
+                <label>Enter your phone number or recovery email</label>
+            </div>
+
+            <mat-form-field appearance="outline" style="margin-top: 10%;">
+                <mat-label>Phone number or email</mat-label>
+                <input matInput placeholder="Phone number or email" ng-model="myInput" required id="email">
+                <!-- <span ng-show="myForm.email.$error.required">Email is required.</span> -->
+            </mat-form-field>
+
+            <div>
+                <button mat-button class="btn4">Next</button>
+            </div>
+        </div>
+    </form>
+</div>

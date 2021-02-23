@@ -1,0 +1,36 @@
+<div class="container">
+    <form class="form-content">
+        <div fxLayout="column" fxLayoutAlign="start">
+            <div class="img1">
+                <img mat-card-image src="../../../assets/google.jpg" width="80" alt="Google Image" class="logo">
+            </div>
+
+            <div>
+                <h1 style="font-size: 24px;">Reset Password</h1>
+            </div>
+            <div>
+                <label style="font: size 28px;">Use your email Account</label>
+            </div>
+
+            <mat-form-field appearance="outline" style="margin-top: 10%;">
+                <mat-label>New Password</mat-label>
+                <input matInput placeholder="New Password" ng-model="myInput" required id="email">
+                <!-- <span ng-show=".email.$error.required">Email is required.</span> -->
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" style="margin-top: 10%;">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput placeholder="Confirm Password" ng-model="myInput" required id="email">
+                <!-- <span ng-show="myForm.email.$error.required">Email is required.</span> -->
+            </mat-form-field>
+
+            <section class="example-section">
+                <mat-checkbox class="ex-margin" id="password">Show Password</mat-checkbox>
+            </section>
+
+            <div>
+                <button mat-button class="btn4">Change password</button>
+            </div>
+        </div>
+    </form>
+</div>

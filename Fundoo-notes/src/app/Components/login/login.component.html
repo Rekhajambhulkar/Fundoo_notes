@@ -1,0 +1,44 @@
+<form #userlogin="ngForm" (ngSubmit)="onClickSubmit(userlogin.value)">
+    <div class="form-content">
+        <div fxLayout="column" fxLayoutAlign="start">
+            <div class="img1">
+                <img mat-card-image src="../../../assets/google.jpg" width="80" alt="Google Image" class="logo">
+            </div>
+
+            <div>
+                <h1 style="font-size: 24px;">Sign in</h1>
+            </div>
+            <div>
+                <p style="margin-left: 27%;">Use your Google Account</p>
+            </div>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Email or phone</mat-label>
+                <input matInput placeholder="Email or phone" name="email" ngModel>
+            </mat-form-field>
+            <div>
+                <button mat-button color="primary" class="btn1">Forgot email?</button>
+            </div><br>
+
+            <mat-form-field appearance="outline" class="regname2">
+                <mat-label>Password</mat-label>
+                <input matInput [type]="showPassword ? 'text':'password'" type="password" placeholder="Password"
+                    name="password" ngModel>
+            </mat-form-field>
+            <div>
+                <button mat-button color="primary" class="btn1"
+                routerLink="/forgotpass">Forgot password?</button>
+            </div><br>
+
+            <p class="uclass"> Not your computer? Use Guest mode to sign in privately.</p>
+            <div>
+                <button mat-button class="btn3">Learn more</button>
+            </div>
+            <div>
+                <button mat-button class="btn3" routerLink="/Register">Create
+                    account</button>
+                <button mat-button type="submit" class="btn4">Next</button>
+            </div>
+        </div>
+    </div>
+</form>
