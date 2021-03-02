@@ -17,8 +17,20 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ForgotPassComponent } from './Components/forgot-pass/forgot-pass.component';
 import { ResetPassComponent } from './Components/reset-pass/reset-pass.component';
 import {HttpClientModule} from '@angular/common/http'
-
-
+import {RouterModule} from '@angular/router';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { CreateNoteComponent } from './Components/create-note/create-note.component';
+import { GetAllNotesComponent } from './Components/get-all-notes/get-all-notes.component';
+import { DisplayNotesComponent } from './Components/display-notes/display-notes.component';
+import { IconsComponent } from './Components/icons/icons.component';
+import {MatCardModule} from '@angular/material/card';
+import { ArchiveComponent } from './Components/archive/archive.component';
+import { TrashComponent } from './Components/trash/trash.component';
 
 @NgModule({ 
   declarations: [
@@ -26,7 +38,14 @@ import {HttpClientModule} from '@angular/common/http'
     RegisterComponent,
     LoginComponent,
     ForgotPassComponent,
-    ResetPassComponent
+    ResetPassComponent,
+    DashboardComponent,
+    CreateNoteComponent,
+    GetAllNotesComponent,
+    DisplayNotesComponent,
+    IconsComponent,
+    ArchiveComponent,
+    TrashComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,8 +59,14 @@ import {HttpClientModule} from '@angular/common/http'
     MatIconModule,
     MatCheckboxModule,
     FlexLayoutModule,
-    HttpClientModule
-    
+    HttpClientModule,
+    RouterModule,
+    MatSnackBarModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
+    MatMenuModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,47 @@
+<div fxLayoutAlign="center">
+            <mat-card class="title">
+            <div fxFlexLayout="column" *ngIf="!show" class="t1">
+                <textarea  matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="auto"
+                cdkAutosizeMinColumns="auto" cdkAutosizeMaxRows="auto"  name="content" [(ngModel)]="title" placeholder="Title"></textarea>
+            </div>
+            <div class="t2">
+                <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="auto"
+                cdkAutosizeMinColumns="auto" cdkAutosizeMaxRows="auto" value={note.description} (click)="onClick()" [(ngModel)]="description" name="title" id="description" placeholder="Take a note" class="takeNote"></textarea>
+            </div>
+            <div *ngIf="!show">
+                <app-icons></app-icons>
+            </div>
+            <div *ngIf="show">
+                <div class="img1">
+                    <img mat-card-image src="../../../assets/check_box-24px.svg">
+                </div>
+                <div class="img2">
+                    <img mat-card-image src="../../../assets/brush-black-18dp.svg">
+                </div>
+                <div class="img3">
+                    <img mat-card-image src="../../../assets/photo-24px.svg">
+                </div>
+            </div>
+           
+
+            <div class="btn1" *ngIf=!show>
+                <button mat-button role='button' tabindex="0"  color="blck" class="btn1" data-dismiss='modal' (click)="closeWindow()">Close</button>
+            </div>  
+        </mat-card>        
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

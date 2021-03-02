@@ -1,0 +1,83 @@
+.mat-card{
+    margin-left: 13%;
+    top: 20px;
+    position: center;
+    width: 600px;
+    padding: 32px auto 20px auto;
+    background: white;
+    padding: 10px;
+    border-radius: 7px;
+    box-shadow: 0 1px 7px rgb(128, 128, 128);
+}
+
+.t1{
+    height: 60px;
+    
+}
+
+.t2{
+    height: 80px;
+}
+/*
+.mat-form-field input{
+    width: 90%;
+    border: gray;
+    margin: 10px 10px;
+    margin-bottom: 20px;
+    outline:  none;
+    font-size: 1rem;
+    resize: none;
+}
+
+*/
+.mat-form-field textarea{
+    width: 90%;
+    border: gray;
+    margin: 8px 8px;
+    margin-bottom: 20px;
+    outline:  none;
+    font-size: 1rem;
+    resize: none;
+}
+
+.note{
+    width: 40%;
+    height: 60%;
+}
+
+.notes{
+    height: 30px;
+    border-color: white;
+    border-radius: 2px;
+}
+
+.img1{
+    margin-left: 75%;
+    width: 0px;
+    height: 0px;
+    margin-top: -70px;
+    
+}
+
+.img2{
+    width: 1px;
+    height: 15px;
+    margin-left: 85%
+}
+
+.img3{
+    width: 1px;
+    height: 15px;
+    margin-left:95%;
+    margin-top: -12px;
+}
+
+.btn1{
+    margin-left: 70%;
+    margin-top: -8%;
+    user-select: none;
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+}

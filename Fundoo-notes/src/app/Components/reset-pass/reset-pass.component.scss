@@ -10,6 +10,32 @@
     width: 450px;
     padding: 25px;
     height: 500px;
+
+}
+
+.header{
+    font-size: 24px;
+    margin-left: -10px;
+    margin-right: -100px;
+    justify-content: center;
+}
+
+.label{
+    margin-left: 30px;
+    font-size: 16px;
+}
+
+.form-field{
+    margin-right: 55px;;
+}
+    
+.newpass{
+    margin-top: 10%;
+    margin-right: -62px;
+    margin-left: -40px;
+    width: 175%;
+
+
 }
 
 h1{
@@ -22,14 +48,35 @@ label{
     font-size: 16px;
 }
 
+.btn1{
+    margin-left: -300px;
+}
+
 .img1{
 margin-top: 40px;
-margin-left: 30%;
+margin-left: 25%;
 
 }
 .btn4{
     background-color: #1a73e8;
     color: white;
-    margin-left: 80%;
-    font-size: 16px;
+    margin-left: 75%;
+    font-size: 12px;
+}
+
+@media screen and (max-width:360px){
+
+    .btn4{
+        margin-right: -30px;
+    }
+
+    .form-field{
+        width: 70%;
+        margin-left: 10px;
+    }
+
+    .example-section{
+        margin-left: 10px;
+    }
+
 }

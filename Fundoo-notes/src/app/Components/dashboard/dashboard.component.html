@@ -1,0 +1,77 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+   
+    <mat-toolbar color="white" class="example-toolbar">
+
+        <div fxFlex=20 fxLayoutAlign="start center" style="margin-right:20px">
+            <button mat-icon-button (click)="snav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <img class="img" src="../../../assets/head.jpg">
+            <div fxLayout="row" class="name">
+                <h1 style="color: #4285F4;">F</h1>
+                <h1 style="color: #EA4335;">u</h1>
+                <h1 style="color: #FBBC04;">n</h1>
+                <h1 style="color: #4285F4;">d</h1>
+                <h1 style="color: #34A853;">o</h1>
+                <h1 style="color: #EA4335;">o</h1>
+            </div>
+        </div>
+
+        <div fxFlexLayout="row" fxLayoutAlign="start" fxFlex=100 fxFlex.xs=20>
+            <div fxFlex=105 class="searchD">
+                <mat-form-field appearance="fill" class="searchF" > 
+                    <img src="../../../assets/search-24px.svg">
+                    <input matInput class="search" autocomplete="none" placeholder="search" class="search">
+                </mat-form-field>
+            </div>
+
+            <div fxFlex fxFlexLayout="row" fxLayoutAlign="end center">
+                <button mat-icon-button class="btn1">
+                    <img src="../../../assets/refresh-24px.svg">
+                </button>
+                <button mat-icon-button class="btn2">
+                    <img src="../../../assets/view_agenda-24px.svg">
+                </button>
+                <button mat-icon-button class="btn3">
+                    <img src="../../../assets/settings-24px.svg">
+
+                </button>
+                <button mat-icon-button class="btn4">
+                    <img src="../../../assets/apps-24px.svg">
+                </button>
+
+               
+            </div>
+        </div>
+
+</mat-toolbar>
+<mat-divider></mat-divider>
+
+<mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+        fixedTopGap="56">
+        <mat-nav-list class="list">
+           <a mat-list-item routerLink="notes" routerLinkActive="active">
+            <mat-icon class="icon">lightbulb</mat-icon>Notes
+           </a>
+           <a mat-list-item routerLink="reminders">
+            <mat-icon class="icon">notifications</mat-icon>Reminders
+           </a>
+           <a mat-list-item routerLink="edit">
+            <mat-icon class="icon">create</mat-icon>Edit Label
+           </a>
+           <a mat-list-item routerLink="archive" (click)="clickOnArchive()">
+            <mat-icon class="icon">archive</mat-icon>Archive
+           </a>
+           <a mat-list-item routerLink="trash">
+            <mat-icon class="icon">delete</mat-icon>Bin
+           </a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <p *ngFor="let content of fillerContent">{{content}}</p>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+</div>
