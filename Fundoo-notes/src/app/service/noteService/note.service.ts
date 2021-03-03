@@ -26,5 +26,14 @@ export class NoteService {
   archive(data: any){
     return this.httpService.post('notes/archiveNotes', data)
   }
+
+  delete(){
+    return this.httpService.get('notes/getTrashNotesList')
+  }
+
+  deleteNotes(data: any){
+    return this.httpService.post('notes/trashNotes', data)
+
+  }
   
 }

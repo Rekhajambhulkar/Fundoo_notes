@@ -26,8 +26,6 @@ export class ArchiveComponent implements OnInit {
     })   
   }
 
-  unArchive(){
-    this.noteService.archiveNotes().subscribe
-  }
+  
 
 }

@@ -66,7 +66,8 @@ import { TrashComponent } from './Components/trash/trash.component';
     MatToolbarModule,
     MatListModule,
     MatMenuModule,
-    MatCardModule
+    MatCardModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

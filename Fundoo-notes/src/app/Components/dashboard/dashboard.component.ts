@@ -32,7 +32,5 @@ export class DashboardComponent implements OnDestroy {
 
   clickOnArchive(){
    console.log("Added")
-
-  }
-
+  }  
 }

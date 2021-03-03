@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {NoteService} from '../../service/noteService/note.service';
+import { NoteService } from '../../service/noteService/note.service';
+
 
 @Component({
   selector: 'app-create-note',
@@ -11,13 +12,11 @@ export class CreateNoteComponent implements OnInit {
   description: string;
   title: string;
 
-  note = [];
-
   public show: boolean = true;
   public buttonName: any = "Title";
   constructor(private noteService: NoteService) {
     this.title = "",
-      this.description = "";
+      this.description = ""
   }
 
   ngOnInit(): void {
@@ -37,7 +36,7 @@ export class CreateNoteComponent implements OnInit {
     this.show = !this.show;
 
     if (this.show)
-       this.buttonName = "Take a note";
+      this.buttonName = "Take a note";
     else
       this.buttonName = "Title";
     console.log('closing');
@@ -47,13 +46,14 @@ export class CreateNoteComponent implements OnInit {
 
   addNote(): void {
 
-    let obj ={
+    let obj = {
       "title": this.title,
       "description": this.description,
-    }  
+    }
+
     this.noteService.createNote(obj).subscribe((res) => {
       console.log("Success", res)
-    },(error) =>{
+    }, (error) => {
       console.log("Error", error)
     })
   }
