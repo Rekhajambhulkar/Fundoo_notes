@@ -35,5 +35,10 @@ export class NoteService {
     return this.httpService.post('notes/trashNotes', data)
 
   }
+
+  deleteForeverNotes(data: any){
+    return this.httpService.post('notes/deleteForeverNotes', data)
+
+  }
   
 }

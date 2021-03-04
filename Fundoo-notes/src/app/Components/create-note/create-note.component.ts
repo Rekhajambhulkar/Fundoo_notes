@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Inject, OnInit, Output, EventEmitter } from '@angular/core';
+import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog'
 import { NoteService } from '../../service/noteService/note.service';
+import { from } from 'rxjs';
 
 
 @Component({
@@ -11,6 +13,7 @@ import { NoteService } from '../../service/noteService/note.service';
 export class CreateNoteComponent implements OnInit {
   description: string;
   title: string;
+  id:any;
 
   public show: boolean = true;
   public buttonName: any = "Title";
@@ -18,6 +21,8 @@ export class CreateNoteComponent implements OnInit {
     this.title = "",
       this.description = ""
   }
+
+  @Output() refreshNote = new EventEmitter<any>();
 
   ngOnInit(): void {
   }
@@ -47,12 +52,14 @@ export class CreateNoteComponent implements OnInit {
   addNote(): void {
 
     let obj = {
+      "noteId": this.id,
       "title": this.title,
       "description": this.description,
     }
 
     this.noteService.createNote(obj).subscribe((res) => {
       console.log("Success", res)
+      this.refreshNote.emit({M: 'Note created successfully'});
     }, (error) => {
       console.log("Error", error)
     })

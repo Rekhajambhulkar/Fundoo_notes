@@ -1,38 +1,49 @@
 <div fxLayout="row">
-    <div class="img1">
+    <div class="img1" *ngIf='!IsTrash'>
         <mat-icon class="icon">add_alert</mat-icon>
     </div>
 
-    <div class="img2">
+    <div class="img2" *ngIf='!IsTrash'>
         <mat-icon class="icon">person_add</mat-icon>
     </div>
 
-    <div class="img3">
+    <div class="img3" *ngIf='!IsTrash'>
         <mat-icon class="icon">palette</mat-icon>
 
     </div>
 
-    <div class="img4">
+    <div class="img4" *ngIf='!IsTrash'>
         <mat-icon class="icon">photo</mat-icon>
     </div>
 
-    <div class="img5" (click)="onclick()">
+    <div class="img5" (click)="onClick()" *ngIf='!IsTrash && !IsUnArchive'>
         <mat-icon class="icon">archive</mat-icon>
+    </div>
+
+    <div class="img5" (click)="onClick()" *ngIf='IsUnArchive'>
+        <mat-icon class="icon">unarchive</mat-icon>
 
     </div>
     
-
-
-    <div class="img6">
+    <div class="img6" *ngIf='!IsTrash'>
         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
             <mat-icon>more_vert</mat-icon>
-          </button>
-          <mat-menu #menu="matMenu">
+        </button>
+        <mat-menu #menu="matMenu">
             <button mat-menu-item (click)=" deleteNote()">
-             
-              <span>delete</span>
+
+                <span>delete</span>
             </button>
-           
-          </mat-menu>
+
+        </mat-menu>
+    </div>
+
+    <div fxLayout="row" *ngIf='IsTrash' class="delete">
+        <div (click)="deleteForever()">
+            <mat-icon>delete_forever</mat-icon>
+        </div>
+        <div (click)="restoreNote()">
+            <mat-icon style="margin-left: 10px;">restore_from_trash</mat-icon>
+        </div>
     </div>
 </div>

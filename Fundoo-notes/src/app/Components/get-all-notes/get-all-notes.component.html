@@ -1,2 +1,2 @@
-<app-create-note></app-create-note>
+<app-create-note (refreshNote)='getNotes($event)'></app-create-note>
 <app-display-notes [notesArray]="notes"></app-display-notes>

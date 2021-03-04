@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {NoteService} from '../../service/noteService/note.service'
 
 @Component({
@@ -9,8 +9,10 @@ import {NoteService} from '../../service/noteService/note.service'
 
 export class ArchiveComponent implements OnInit {
   notes:any = [];
-  constructor(private noteService: NoteService) { }
+  public isUnArchive = true;
 
+  constructor(private noteService: NoteService) { }
+ 
 
   ngOnInit(): void {
     this.getArchive();   
