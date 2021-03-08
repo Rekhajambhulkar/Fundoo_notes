@@ -8,11 +8,13 @@
     padding: 14px;
     margin: 16px;
     float: left;
+    overflow: hidden;
 }
 
 .note h1{
     font-size: 1rem;
     margin-bottom: 6px;
+    
 }
 
 .note p{
@@ -21,4 +23,13 @@
     bottom: 10px;
     white-space: pre-wrap;
     word-wrap: break-word;
+    overflow: hidden;
+}
+
+
+
+@media screen and (max-width:360px){
+ .note{
+     margin-left: 45px;
+ }   
 }

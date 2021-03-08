@@ -7,24 +7,33 @@
         <mat-icon class="icon">person_add</mat-icon>
     </div>
 
-    <div class="img3" *ngIf='!IsTrash'>
-        <mat-icon class="icon">palette</mat-icon>
-
+    <div class="img3">
+        <div *ngIf='!IsTrash'>
+            <mat-menu #menu="matMenu">
+               <div *ngFor="let color of colors" id="btn">
+                    <button type="button" class="button" [ngStyle]="{'background-color': color}" (click)="bgColor()"></button>
+                </div> 
+               
+            </mat-menu>
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon class="icon">palette</mat-icon>
+            </button>       
+        </div>
     </div>
 
     <div class="img4" *ngIf='!IsTrash'>
         <mat-icon class="icon">photo</mat-icon>
     </div>
 
-    <div class="img5" (click)="onClick()" *ngIf='!IsTrash && !IsUnArchive'>
+    <div class="img5" (click)="getArchive()" *ngIf='!IsTrash && !IsUnArchive'>
         <mat-icon class="icon">archive</mat-icon>
     </div>
 
-    <div class="img5" (click)="onClick()" *ngIf='IsUnArchive'>
+    <div class="img5" (click)="unArchive()" *ngIf='IsUnArchive'>
         <mat-icon class="icon">unarchive</mat-icon>
 
     </div>
-    
+
     <div class="img6" *ngIf='!IsTrash'>
         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
             <mat-icon>more_vert</mat-icon>

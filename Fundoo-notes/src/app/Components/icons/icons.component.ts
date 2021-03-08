@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NoteService } from '../../service/noteService/note.service'
+import { DataserviceService } from '../../service/dataService/dataservice.service'
 
 @Component({
   selector: 'app-icons',
@@ -8,36 +9,50 @@ import { NoteService } from '../../service/noteService/note.service'
 })
 
 export class IconsComponent implements OnInit {
+  card:any = '';
   public show: boolean = true;
-  public isArchived:boolean = false;
+  public isArchived: boolean = false;
+  status = 'Enable';
 
-  constructor(private noteService: NoteService) { }
+  public colors: any[] = ["red", "orange", "yellow", " blue"];
+  // colorss: any[] = [
+  //   {
+  //     "color": "red"},
+  //   {
+  //     "color": "orange"
+  //   },
+  //   {
+  //     "color": "yellow"
+  //   },
+  //   {
+  //     "color": "pink"
+  //   },
+  //   {
+  //     "color": "blue"
+  //   }
+  // ];
+
+  constructor(private noteService: NoteService, private dataService: DataserviceService) { }
+  @Output() refreshNote = new EventEmitter<any>();
 
   @Input() noteId: any;
   @Input() IsTrash: any;
   @Input() IsUnArchive: any;
 
-  ngOnInit(): void {
-  }
+  @Output() backgroundColor = new EventEmitter<any>();
 
-  onClick(){
-    if(true){
-      this.getArchive();
-    }
-    else{
-      this.isArchived;
-    }
-  }
-
+  ngOnInit(): void { }
   getArchive() {
-   
     let data = {
       "noteIdList": [this.noteId.id],
       "isArchived": true,
     }
     console.log(data)
+
     this.noteService.archive(data).subscribe(res => {
       console.log("Success", res)
+      this.dataService.changeMessage("Archive")
+      this.refreshNote.emit();
     },
       error => {
         console.log("Error", error)
@@ -52,6 +67,8 @@ export class IconsComponent implements OnInit {
     console.log(data)
     this.noteService.archive(data).subscribe(res => {
       console.log("Success", res)
+      this.dataService.changeMessage("unArchive")
+      this.refreshNote.emit({ M: 'Note unarchive successfully' });
     },
       error => {
         console.log("Error", error)
@@ -67,6 +84,9 @@ export class IconsComponent implements OnInit {
     console.log(data)
     this.noteService.deleteNotes(data).subscribe(res => {
       console.log("Success", res)
+      this.dataService.changeMessage("deleted")
+      this.refreshNote.emit({ M: 'Note deleted successfully' });
+
     },
       error => {
         console.log("Error", error)
@@ -81,23 +101,42 @@ export class IconsComponent implements OnInit {
     console.log(data)
     this.noteService.deleteNotes(data).subscribe(res => {
       console.log("Success", res)
+      this.dataService.changeMessage("restore")
+      this.refreshNote.emit({ M: 'Note restore successfully' });
     },
       error => {
         console.log("Error", error)
       })
   }
 
-  deleteForever(){
+  deleteForever() {
     let data = {
       "noteIdList": [this.noteId.id],
       "isDeleted": true,
     }
-    this.noteService.deleteForeverNotes(data).subscribe(res =>{
+    this.noteService.deleteForeverNotes(data).subscribe(res => {
       console.log("Success", res)
+      this.dataService.changeMessage("deleted");
+      this.refreshNote.emit({ M: 'Note deleted successfully' });
     },
-    error =>{
-      console.log("Error", error)
-    })
-
+      error => {
+        console.log("Error", error)
+      })
   }
+  
+ bgColor(){
+  let data = {
+    "noteIdList": [this.noteId],
+    "color": this.colors
+  }
+  this.noteService.changeNoteColor(data).subscribe(res =>{
+    console.log("Success", res)
+    this.backgroundColor.emit(this.colors);
+  },
+  error =>{
+    console.log("Error", error)
+  })
+      
+   }
 }
+

@@ -1,5 +1,5 @@
 .mat-card{
-    margin-left: 13%;
+    margin-left: 4%;
     top: 20px;
     position: center;
     width: 600px;
@@ -8,16 +8,24 @@
     padding: 10px;
     border-radius: 7px;
     box-shadow: 0 1px 7px rgb(128, 128, 128);
+    overflow: hidden;
 }
 
 .t1{
     height: 60px;
-    
+
 }
 
 .t2{
-    height: 80px;
+    height: 70px;
+    overflow: hidden;
 }
+
+.t2 textarea{
+    overflow: hidden;
+}
+
+
 /*
 .mat-form-field input{
     width: 90%;
@@ -46,7 +54,7 @@
 }
 
 .notes{
-    height: 30px;
+    height: 20px;
     border-color: white;
     border-radius: 2px;
 }
@@ -80,4 +88,25 @@
 
 ::ng-deep .mat-form-field-underline {
     display: none;
+}
+
+@media screen and (max-width:360px){
+    .mat-card{
+        margin-right: 10px;
+        width: 285px
+    }
+
+    .btn1{
+        margin-right: 30px;
+    }
+
+    .img1{
+        margin-right: 25px;
+    }
+    .img3{
+        margin-right: 2px;
+    }
+    .t1{
+        height: 20px;
+    }
 }

@@ -40,5 +40,12 @@ export class NoteService {
     return this.httpService.post('notes/deleteForeverNotes', data)
 
   }
-  
+
+  updateNote(data:any){
+    return this.httpService.post('notes/updateNotes',data)
+   }
+
+   changeNoteColor(data: any){
+     return this.httpService.post('notes/changesColorNotes', data)
+   }
 }

@@ -1,7 +1,5 @@
-<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-   
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">   
     <mat-toolbar color="white" class="example-toolbar">
-
         <div fxFlex=20 fxLayoutAlign="start center" style="margin-right:20px">
             <button mat-icon-button (click)="snav.toggle()">
                 <mat-icon>menu</mat-icon>
@@ -16,7 +14,6 @@
                 <h1 style="color: #EA4335;">o</h1>
             </div>
         </div>
-
         <div fxFlexLayout="row" fxLayoutAlign="start" fxFlex=100 fxFlex.xs=20>
             <div fxFlex=105 class="searchD">
                 <mat-form-field appearance="fill" class="searchF" > 
@@ -50,9 +47,9 @@
 <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
         fixedTopGap="56">
-        <mat-nav-list class="list">
-           <a mat-list-item routerLink="notes" routerLinkActive="active">
-            <mat-icon class="icon">lightbulb</mat-icon>Notes
+        <mat-nav-list class="list" >
+           <a mat-list-item routerLink="notes" routerLinkActive="active" ng-class="{ bg : icon1 == red }">
+            <mat-icon>lightbulb</mat-icon>Notes
            </a>
            <a mat-list-item routerLink="reminders">
             <mat-icon class="icon">notifications</mat-icon>Reminders
@@ -60,7 +57,7 @@
            <a mat-list-item routerLink="edit">
             <mat-icon class="icon">create</mat-icon>Edit Label
            </a>
-           <a mat-list-item routerLink="archive" (click)="clickOnArchive()">
+           <a mat-list-item routerLink="archive">
             <mat-icon class="icon">archive</mat-icon>Archive
            </a>
            <a mat-list-item routerLink="trash">

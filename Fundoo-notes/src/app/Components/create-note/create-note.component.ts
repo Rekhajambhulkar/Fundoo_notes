@@ -1,10 +1,7 @@
 import { Component,Inject, OnInit, Output, EventEmitter } from '@angular/core';
-import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog'
 import { NoteService } from '../../service/noteService/note.service';
-import { from } from 'rxjs';
-
-
-@Component({
+ 
+@Component({ 
   selector: 'app-create-note',
   templateUrl: './create-note.component.html',
   styleUrls: ['./create-note.component.scss']
@@ -13,56 +10,52 @@ import { from } from 'rxjs';
 export class CreateNoteComponent implements OnInit {
   description: string;
   title: string;
-  id:any;
+  color = '';
+  isOpen = true;
 
   public show: boolean = true;
   public buttonName: any = "Title";
   constructor(private noteService: NoteService) {
     this.title = "",
-      this.description = ""
+    this.description = ""
   }
 
   @Output() refreshNote = new EventEmitter<any>();
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onClick() {
     this.show = !this.show;
-
     // CHANGE THE NAME OF THE field.
     if (this.show)
       this.buttonName = "Take a note";
     else
-      this.buttonName = "Title";
-  }
+      this.buttonName = "Title"; }
 
   closeWindow() {
     this.show = !this.show;
-
     if (this.show)
       this.buttonName = "Take a note";
     else
       this.buttonName = "Title";
     console.log('closing');
-
-    this.addNote()
-  }
+    this.addNote() }
 
   addNote(): void {
-
     let obj = {
-      "noteId": this.id,
       "title": this.title,
       "description": this.description,
     }
-
     this.noteService.createNote(obj).subscribe((res) => {
       console.log("Success", res)
       this.refreshNote.emit({M: 'Note created successfully'});
     }, (error) => {
       console.log("Error", error)
     })
+  }
+
+  backgroundColor(colors: any){
+    console.log(colors);
   }
 }
 

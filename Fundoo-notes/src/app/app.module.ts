@@ -31,7 +31,8 @@ import { IconsComponent } from './Components/icons/icons.component';
 import {MatCardModule} from '@angular/material/card';
 import { ArchiveComponent } from './Components/archive/archive.component';
 import { TrashComponent } from './Components/trash/trash.component';
-import {MatDialogModule} from '@angular/material/dialog'
+import {MatDialogModule} from '@angular/material/dialog';
+import { UpdateComponent } from './Components/update/update/update.component';
 
 @NgModule({ 
   declarations: [
@@ -47,6 +48,7 @@ import {MatDialogModule} from '@angular/material/dialog'
     IconsComponent,
     ArchiveComponent,
     TrashComponent,
+    UpdateComponent,
   ],
   imports: [
     BrowserModule,

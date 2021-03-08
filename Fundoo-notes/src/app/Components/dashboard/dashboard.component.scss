@@ -8,6 +8,18 @@
     right: 0;
   }
 
+  .icon1{
+    background-color: orange;
+  }
+
+  .green {
+    background-color: orange;
+}
+
+.red {
+    background-color: gray;
+}
+
   .img{
     height: 10%;
     width: 10%;
@@ -93,12 +105,17 @@
   h1.example-app-name {
     margin-left: 8px;
   }
+
+  .list{
+    
+  }
   
   .example-sidenav-container {
     /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
     flex: 1;
     background-color: white;
+
   }
   
   .example-is-mobile .example-sidenav-container {
@@ -122,4 +139,33 @@
 }
 ::ng-deep .mat-form-field-underline {
   display: none;
+}
+
+@media screen and (max-width:360px){
+  .searchF{
+    margin-top: 50px;
+    margin-left: 60px;
+  }
+  .search{
+    width: 10px;
+    height: -10px;
+  }
+
+  .img{
+    visibility: hidden;
+  }
+
+  .btn1{
+    margin-left: 90px;
+  }
+  .btn2{
+    margin-left: -12px;
+  }
+  .btn3{
+    margin-left: -5px;
+  }
+  .btn4{
+    margin-left: -45px;
+  }
+    
 }

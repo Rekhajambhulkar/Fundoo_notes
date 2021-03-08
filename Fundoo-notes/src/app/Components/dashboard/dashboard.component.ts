@@ -1,7 +1,7 @@
 //import { Component, OnInit } from '@angular/core';
-import {MediaMatcher} from '@angular/cdk/layout';
-import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
-import {NoteService} from '../../service/noteService/note.service'
+import { MediaMatcher } from '@angular/cdk/layout';
+import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
+import { NoteService } from '../../service/noteService/note.service'
 
 @Component({
   selector: 'app-dashboard',
@@ -9,13 +9,16 @@ import {NoteService} from '../../service/noteService/note.service'
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnDestroy {
+  toggle = true;
+  status = 'Enable'; 
+  public show:boolean = true;
   mobileQuery: MediaQueryList;
   notes: any = [];
 
-  fillerNav = Array.from({length: 5}, (_, i) => `Nav Item ${i + 1}`);
+  fillerNav = Array.from({ length: 5 }, (_, i) => `Nav Item ${i + 1}`);
 
-  fillerContent = Array.from({length: 5}, () =>
-      ``);
+  fillerContent = Array.from({ length: 5 }, () =>
+    ``);
 
   private _mobileQueryListener: () => void;
 
@@ -25,12 +28,20 @@ export class DashboardComponent implements OnDestroy {
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
- 
+
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 
-  clickOnArchive(){
-   console.log("Added")
-  }  
+  onClick($scope: any){
+      $scope.myButton = 'red'; 
+      $scope.changeCol = function () { 
+          $scope.myButton = "green"; 
+      }; 
+  }
+
+  enableDisableRule() {
+    this.toggle = !this.toggle;
+    this.status = this.toggle ? 'Enable' : 'Disable';
+}
 }

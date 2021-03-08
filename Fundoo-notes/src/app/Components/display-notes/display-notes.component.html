@@ -1,8 +1,8 @@
-<div >
-    <mat-card class="note" id="noteId" *ngFor = 'let card of notesArray'>
+<div fxLayoutGap="2px">
+    <mat-card class="note" id="noteId" *ngFor = 'let card of notesArray' [style.background-color]=card.color>
         <div>
-            <h1>{{card.title}}</h1>
-            <p>{{card.description}}</p>
+            <h1 (click)="openDialog(card)">{{card.title}}</h1>
+            <p (click)="openDialog(card)">{{card.description}}</p>
         </div>
     <app-icons [IsUnArchive]="isUnArchive" [IsTrash]="isTrash" [noteId]="card"></app-icons>
     </mat-card>
