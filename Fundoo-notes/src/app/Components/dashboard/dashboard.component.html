@@ -18,7 +18,7 @@
             <div fxFlex=105 class="searchD">
                 <mat-form-field appearance="fill" class="searchF" > 
                     <img src="../../../assets/search-24px.svg">
-                    <input matInput class="search" autocomplete="none" placeholder="search" class="search">
+                    <input matInput class="search" autocomplete="none" placeholder="search">
                 </mat-form-field>
             </div>
 
@@ -43,24 +43,25 @@
 
 </mat-toolbar>
 <mat-divider></mat-divider>
-
+ 
 <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
         fixedTopGap="56">
-        <mat-nav-list class="list" >
-           <a mat-list-item routerLink="notes" routerLinkActive="active" ng-class="{ bg : icon1 == red }">
-            <mat-icon>lightbulb</mat-icon>Notes
+        <mat-nav-list class="list">
+           <a mat-list-item routerLink="notes" class="icon2" routerLinkActive="active" [class.list1]="check" (click)="myfunc()">
+            <mat-icon class="icon">lightbulb</mat-icon>
+            Notes
            </a>
-           <a mat-list-item routerLink="reminders">
+           <a mat-list-item routerLink="reminders" class="icon2">
             <mat-icon class="icon">notifications</mat-icon>Reminders
            </a>
-           <a mat-list-item routerLink="edit">
+           <a mat-list-item routerLink="edit" class="icon2">
             <mat-icon class="icon">create</mat-icon>Edit Label
            </a>
-           <a mat-list-item routerLink="archive">
+           <a mat-list-item routerLink="archive" class="icon2">
             <mat-icon class="icon">archive</mat-icon>Archive
            </a>
-           <a mat-list-item routerLink="trash">
+           <a mat-list-item routerLink="trash" class="icon2">
             <mat-icon class="icon">delete</mat-icon>Bin
            </a>
         </mat-nav-list>

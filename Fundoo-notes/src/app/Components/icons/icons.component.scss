@@ -1,54 +1,55 @@
 .img1{
-    width: -0%;
     margin-top: -8%;
     margin-left: 3px;
-    height: -0px;
-    size: -50px;
 }
 
 
 .img2{
-    width: -0px;
     margin-top: -8%;
-    margin-left: 40px;
-    height: -0px;
+    margin-left: 13px;
+    cursor: pointer;
 }
 
 .img3{
-    width: 0px;
-    margin-top: -9%;
-    margin-left: 40px;
-    height: 0px;
+    margin-top: -10%;
+    margin-left: 8px;
+    cursor: pointer;
 }
 
 .img4{
-    width: 0px;
     margin-top: -8%;
-    margin-left: 46px;
-    height: 0px;
+    margin-left: 8px;
+    cursor: pointer;
 }
 
 .img5{
-    width: 0px;
     margin-top: -8%;
-    margin-left: 48px;
-    height: 0px;
+    margin-left: 16px;
+    cursor: pointer;
 }
 
 .img6{
-    width: 0px;
-    margin-top: -10%;
-    margin-left: 35px;
-    height: 0px;
+    margin-top: -12%;
+    margin-left: 14px;
+    cursor: pointer;
 }
 
 .delete{
     margin-top: -25px;
 }
 
-.button{
-    height: 30px;
-    border: none;
-    width: 20px;
-    border-radius: 50%;
+.img3{
+    width: 45px;
+    height: 50px;
 }
+
+.button{
+    height: 28px;
+    width: 20px;
+    border: none;
+    border-radius: 50%;
+    float: right;   
+    margin: 2px; 
+    margin-right: 4px;
+}
+

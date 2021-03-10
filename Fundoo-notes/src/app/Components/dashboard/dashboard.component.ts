@@ -14,6 +14,7 @@ export class DashboardComponent implements OnDestroy {
   public show:boolean = true;
   mobileQuery: MediaQueryList;
   notes: any = [];
+  check:boolean = true;
 
   fillerNav = Array.from({ length: 5 }, (_, i) => `Nav Item ${i + 1}`);
 
@@ -40,8 +41,7 @@ export class DashboardComponent implements OnDestroy {
       }; 
   }
 
-  enableDisableRule() {
-    this.toggle = !this.toggle;
-    this.status = this.toggle ? 'Enable' : 'Disable';
-}
+  myfunc(){
+    this.check = true;
+  }
 }

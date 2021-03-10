@@ -1,171 +1,165 @@
 .example-container {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .icon1{
-    background-color: orange;
-  }
-
-  .green {
-    background-color: orange;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
-.red {
-    background-color: gray;
+
+.icon1 {
+  background-color: orange;
 }
 
-  .img{
-    height: 10%;
-    width: 10%;
-  }
+.img {
+  height: 10%;
+  width: 10%;
+}
 
-  .name{
-    margin-left: 5%;
-  }
+.name {
+  margin-left: 5%;
+}
 
-  .input{
-    height: 10%;
-  }
+.list1 {
+  background-color:moccasin;
+  border-radius: 0px 30px 30px 0px;
+}
 
-  .search{
-    font-size: 20px;
-    margin-left: 20px;
-    margin-bottom: 4px;
+.input {
+  height: 10%;
+}
 
-  }
+.search {
+  font-size: 20px;
+  margin-left: 20px;
+  margin-bottom: 4px;
+}
 
-  .searchF{
-    margin-left: -90px;
-    width: 150%;
-    font-size: 15px;
-    margin-top: 10px;
-    border-radius: 10px;
-    margin-top: 6%;
-  
-    
-  }
-  .mat-form-field{
-    transform: translateY(-1.1em) scale(.75);
-    width: 90%;
-  }
+.searchF {
+  margin-left: -90px;
+  width: 150%;
+  font-size: 15px;
+  margin-top: 10px;
+  border-radius: 10px;
+  margin-top: 6%;
+}
+.mat-form-field {
+  transform: translateY(-1.1em) scale(0.75);
+  width: 90%;
+}
 
-  .mat-card input{
-    border: none;
-  }
+.mat-card input {
+  border: none;
+}
 
-  .input{
-    border: wheat;
-  }
-  
-  .searchD{
-    margin-top: 6%;
-    margin-bottom: 7%;
-    width: 10%;
-    border-radius: 2px;
-    height: -80%;
-  }
+.input {
+  border: wheat;
+}
 
-  .btn1{
-    margin-right: 10px;
-  }
+.searchD {
+  margin-top: 6%;
+  margin-bottom: 7%;
+  width: 10%;
+  border-radius: 2px;
+  height: -80%;
+}
 
-  .btn2{
-    margin-left: 10px;
-    margin-right: 10px;
-  }
+.btn1 {
+  margin-right: 10px;
+}
 
-  .btn3{
-    margin-right: 40px;
-  }
-  .btn4{
-    margin-right: 50px;
-  }
+.btn2 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
-  .img1{
-    margin-top: 20px;
-  }
-  
-  .example-is-mobile .example-toolbar {
-    position: fixed;
-    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
-    z-index: 2;
-  }
+.btn3 {
+  margin-right: 40px;
+}
+.btn4 {
+  margin-right: 50px;
+}
 
-  .example-toolbar{
-    background-color: white;
+.img1 {
+  margin-top: 20px;
+}
 
-  }
-  
-  h1.example-app-name {
-    margin-left: 8px;
-  }
+.example-is-mobile .example-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
 
-  .list{
-    
-  }
-  
-  .example-sidenav-container {
-    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+.example-toolbar {
+  background-color: white;
+}
+
+h1.example-app-name {
+  margin-left: 8px;
+}
+
+.example-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
-    flex: 1;
-    background-color: white;
-
-  }
-  
-  .example-is-mobile .example-sidenav-container {
-    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
-       `<body>` to be our scrolling element for mobile layouts. */
-    flex: 1 0 auto;
-  }
-
-  mat-sidenav {
-    width: 280px;
-    padding:15px;
+  flex: 1;
+  background-color: white;
 }
-.mat-drawer { 
-    color:#fff
+
+.example-is-mobile .example-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+       `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
+mat-sidenav {
+  width: 280px;
+  padding: 15px;
+}
+
+mat-sidenav-content {
+  padding-left: 80px;
+}
+
+.mat-drawer {
+  color: #fff;
 }
 .main-content {
-    padding:20px;
+  padding: 20px;
 }
 .toolbar-spacer {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 ::ng-deep .mat-form-field-underline {
   display: none;
 }
 
-@media screen and (max-width:360px){
-  .searchF{
+@media screen and (max-width: 360px) {
+  .searchF {
     margin-top: 50px;
     margin-left: 60px;
+    visibility: hidden;
   }
-  .search{
+  .search {
     width: 10px;
     height: -10px;
   }
 
-  .img{
+  .img {
     visibility: hidden;
   }
 
-  .btn1{
+  .btn1 {
     margin-left: 90px;
   }
-  .btn2{
+  .btn2 {
     margin-left: -12px;
   }
-  .btn3{
+  .btn3 {
     margin-left: -5px;
   }
-  .btn4{
+  .btn4 {
     margin-left: -45px;
   }
-    
 }

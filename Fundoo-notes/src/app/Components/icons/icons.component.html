@@ -1,4 +1,4 @@
-<div fxLayout="row">
+<div fxLayout="row" >
     <div class="img1" *ngIf='!IsTrash'>
         <mat-icon class="icon">add_alert</mat-icon>
     </div>
@@ -7,13 +7,12 @@
         <mat-icon class="icon">person_add</mat-icon>
     </div>
 
-    <div class="img3">
+    <div class="img3" fxLayout="row">
         <div *ngIf='!IsTrash'>
-            <mat-menu #menu="matMenu">
-               <div *ngFor="let color of colors" id="btn">
-                    <button type="button" class="button" [ngStyle]="{'background-color': color}" (click)="bgColor()"></button>
-                </div> 
-               
+            <mat-menu #menu="matMenu" class="mat">
+               <div *ngFor="let color of colors" class="menu">
+                    <button type="button" class="button" [ngStyle]="{'background-color': color.color}" (click)="bgColor(color.color)"></button>
+                </div>      
             </mat-menu>
             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
                 <mat-icon class="icon">palette</mat-icon>

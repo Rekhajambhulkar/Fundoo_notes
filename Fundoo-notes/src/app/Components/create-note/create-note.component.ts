@@ -10,7 +10,7 @@ import { NoteService } from '../../service/noteService/note.service';
 export class CreateNoteComponent implements OnInit {
   description: string;
   title: string;
-  color = '';
+  colors: any;
   isOpen = true;
 
   public show: boolean = true;
@@ -45,6 +45,7 @@ export class CreateNoteComponent implements OnInit {
     let obj = {
       "title": this.title,
       "description": this.description,
+      "color": this.colors
     }
     this.noteService.createNote(obj).subscribe((res) => {
       console.log("Success", res)
@@ -54,8 +55,9 @@ export class CreateNoteComponent implements OnInit {
     })
   }
 
-  backgroundColor(colors: any){
-    console.log(colors);
+  createColor(color: any) {
+    this.colors = color;
+    console.log(this.colors)
   }
 }
 

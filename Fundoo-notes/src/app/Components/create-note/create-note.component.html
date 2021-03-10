@@ -1,6 +1,6 @@
 <div fxLayoutAlign="center">
     
-            <mat-card class="title" [style.background-color]=color>
+            <mat-card class="title" [ngStyle]="{'background-color': colors}">
             <div fxFlexLayout="column" *ngIf="!show" class="t1">
                 <textarea  matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="auto"
                 cdkAutosizeMinColumns="auto" cdkAutosizeMaxRows="auto"  name="content" [(ngModel)]="title" placeholder="Title"></textarea>
@@ -10,7 +10,7 @@
                 cdkAutosizeMinColumns="auto" cdkAutosizeMaxRows="auto" value={note.description}  (click)="onClick()" [(ngModel)]="description" name="title" id="description" placeholder="Take a note" class="takeNote"></textarea>
             </div>
             <div *ngIf="!show">
-                <app-icons  (shareDataToParent) = backgroundColor($event)></app-icons>
+                <app-icons (backGroundColor)="createColor($event)"></app-icons>
             </div>
             <div *ngIf="show">
                 <div class="img1">

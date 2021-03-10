@@ -33,6 +33,8 @@ import { ArchiveComponent } from './Components/archive/archive.component';
 import { TrashComponent } from './Components/trash/trash.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UpdateComponent } from './Components/update/update/update.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({ 
   declarations: [
@@ -70,7 +72,8 @@ import { UpdateComponent } from './Components/update/update/update.component';
     MatListModule,
     MatMenuModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -27,7 +27,6 @@ export class DisplayNotesComponent implements OnInit {
       width: '550px',
       height:'-10%',
       data: card,
-
     });
 
     dialogRef.afterClosed().subscribe((result: any) => {
