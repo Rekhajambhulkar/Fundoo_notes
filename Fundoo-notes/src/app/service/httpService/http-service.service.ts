@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 
 export class HttpServiceService {
   public token: any;
-  BaseUrl = environment.baseUrl
+  BaseUrl = environment.baseUrl;
 
   constructor(private http: HttpClient) { }
 
@@ -21,7 +21,7 @@ export class HttpServiceService {
       })
     }
     console.log(this.BaseUrl)
-    return this.http.post(this.BaseUrl + url, data, options);
+    return this.http.post(this.BaseUrl + url, data);
   }
 
   encode(data: any) {

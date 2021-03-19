@@ -24,7 +24,6 @@ export class GetAllNotesComponent implements OnInit {
 
   getNote() {
     this.noteService.getNotes().subscribe(res => {
-
       console.log("Success", res['data'].data)
       this.note = res['data'].data;
       this.notes = this.note.filter((element: any) => {
